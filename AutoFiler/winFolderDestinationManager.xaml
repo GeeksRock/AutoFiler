@@ -1,0 +1,52 @@
+﻿<Window x:Class="AutoFiler.winFolderDestinationManager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="AutoFiler v2.0" Height="803" Width="891" Loaded="Window_Loaded"
+    Closing="OnClose" StateChanged="OnStateChanged" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" IsVisibleChanged="OnIsVisibleChanged"
+        >
+    <Grid ShowGridLines="False" Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="11"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="11"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0" Grid.Column="0" Grid.Row="0">
+            <Menu>
+                <MenuItem Header="_File">
+                    <MenuItem Header="Run AutoFiler Service" Name="mnuRunAutoFiler" Click="mnuRunAutoFiler_Click"/>
+                    <MenuItem Header="Unmanaged File Types..." Name="mnuUnmanaged" Click="mnuUnmanaged_Click"/>
+                    <MenuItem Header="Configure AutoFiler..." Name="mnuConfigure" Click="mnuConfigure_Click" />
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="Help"/>
+                    <MenuItem Header="About" Name="mnuAbout" Click="mnuAbout_Click"/>
+                </MenuItem>
+                <Separator/>
+                <Separator/>
+                <Separator/>
+                <MenuItem Header="_New Destination..." HorizontalAlignment="Right" Name="mnuNewDestination" Click="mnuNewDestination_Click"/>
+                <MenuItem Header="_Edit Destination..." HorizontalAlignment="Right" Name="mnuEditDestination" Click="mnuEditDestination_Click"/>
+                <MenuItem Header="_Delete Destination" HorizontalAlignment="Right" Name="mnuDeleteDestination" Click="mnuDeleteDestination_Click"/>
+                <Separator/>
+                <MenuItem Header="_Advanced Options..." HorizontalAlignment="Right" Name="mnuAdvancedOptions" Click="mnuAdvancedOptions_Click"/>
+            </Menu>
+        </StackPanel>
+        <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="2" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <GroupBox Foreground="Green" FontWeight="Bold" Header="Folder destinations" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="11" Name="groupBox1" Height="312" DockPanel.Dock="Bottom">
+                <ListBox Foreground="Black" FontWeight="Normal" Name="folders" Margin="0" SelectionChanged="folders_SelectionChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel LastChildFill="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Column="0" Grid.Row="4">
+            <GroupBox Foreground="Green" FontWeight="Bold" Header="File types" DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Height="310" Margin="11" Name="groupBox2">
+                <ListBox  Foreground="Black" FontWeight="Normal" Name="files" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            </GroupBox>
+        </DockPanel>
+        <StackPanel Grid.Row="6" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+            <Button Height="23" HorizontalAlignment="Right" Margin="11" Name="Close" Click="Close_Click" VerticalAlignment="Bottom" Width="75">Close</Button>
+        </StackPanel>
+    </Grid>
+</Window>

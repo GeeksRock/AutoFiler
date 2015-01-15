@@ -1,0 +1,32 @@
+﻿<Window x:Class="AutoFiler.winDuplicateFilenamePrompt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="AutoFiler - Duplicate Filename" Height="300" Width="476"
+    WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid Background="LightYellow">
+        <StackPanel Orientation="Vertical">
+            <StackPanel>
+                <TextBlock Margin="6,5,6,0" Name="txtMessage" TextWrapping="WrapWithOverflow" Height="81" VerticalAlignment="Top">
+                    A file named {filename} already exists in the Destination Folder you've configured to accept files of type {filetype}. 
+                    How do you want AutoFiler to handle this duplicate file?
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Foreground="Green" Height="28" Margin="0" FontWeight="Bold" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="64">Filename:</Label>
+                <Label Height="28" Margin="0" Name="lblFileName" VerticalAlignment="Top">Filename</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Foreground="Green" HorizontalAlignment="Left" Margin="0" Name="label3" FontWeight="Bold" Width="62">File type:</Label>
+                <Label Margin="0" Name="lblFileType">File Type</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Foreground="Green" Margin="0" Name="label2" FontWeight="Bold" HorizontalAlignment="Left" Width="55">Folder:</Label>
+                <Label Margin="0" Name="lblFolder">Folder</Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="102" HorizontalAlignment="Right">
+                <Button Height="23" Margin="0,11" Name="Ignore" VerticalAlignment="Bottom" IsDefault="True" HorizontalAlignment="Right" Width="75" Click="Ignore_Click">_Ignore</Button>
+                <Button Height="23" Margin="3,11" Name="Overwrite" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="Overwrite_Click">_Overwrite</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

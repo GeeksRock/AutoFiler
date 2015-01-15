@@ -1,0 +1,41 @@
+﻿<Window x:Class="AutoFiler.winAbout"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="About AutoFiler" Height="300" Width="399" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Orientation="Vertical">
+            <Label Content="AutoFiler" FontWeight="Bold"/>
+            <Label Content="Version 2.0"/>
+            <Label Content="Copyright 2012"/>
+            <Label Content="Michelle Edmondson"/>
+            <TextBlock TextWrapping="Wrap" Margin="5">
+                <TextBlock.Text>
+                    AutoFiler helps to keep your desktop clean, 
+                    by organizing the desktop files dropped into 
+                    the AutoFiler Drop Folder. Simply drag files 
+                    into the folder with the AutoFiler running, 
+                    and they'll be automatically filed for you 
+                    based on your configuration settings. If 
+                    files are added when the service isn't 
+                    running, you can run the AutoFiler service 
+                    on demand.                
+                </TextBlock.Text>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" Margin="5" FontWeight="Bold">
+                <TextBlock.Text>
+                    Technologies: WPF, C#, XML, MySQL             
+                </TextBlock.Text>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom">
+            <Button Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Click">OK</Button>
+        </StackPanel>
+    </Grid>
+</Window>

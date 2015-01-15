@@ -1,0 +1,47 @@
+﻿<Window x:Class="AutoFiler.winAdvancedOptions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Advanced Options" Height="309" Width="590" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid ShowGridLines="False" Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="11"/>
+            <RowDefinition Height="Auto" MinHeight="28" />
+            <RowDefinition Height="11"/>
+            <RowDefinition Height="Auto" MinHeight="151" />
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="29.7*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0" Grid.Column="0" Grid.Row="0">
+            <Label Margin="0,0,11,0" Foreground="Green" FontWeight="Bold">Advanced Options allow you to autofile your documents based on the name of the document.</Label>
+        </StackPanel>
+        <DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="2" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Label Margin="11,0,0,5">Select a destination folder:</Label>
+            <ComboBox SelectionChanged="cboFolders_SelectionChanged" Name="cboFolders" Margin="0,0,11,0" Height="20"></ComboBox>
+            <!--<GroupBox Foreground="Green" FontWeight="Bold" Header="Folder destinations" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="11" Name="groupBox1" Height="312" DockPanel.Dock="Bottom">
+                <ListBox Foreground="Black" FontWeight="Normal" Name="folders" Margin="0" SelectionChanged="folders_SelectionChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </GroupBox>-->
+        </DockPanel>
+        <!--<DockPanel LastChildFill="True" Grid.Column="0" Grid.Row="4" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">-->
+            <GroupBox Grid.Column="0" Grid.Row="4"  Foreground="Green" FontWeight="Bold" Header="Add file name options" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="11" Name="groupBox1" Height="129" DockPanel.Dock="Bottom">
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel Margin="5">
+                        <RadioButton FontWeight="Normal" HorizontalAlignment="Left" Height="16" Name="rdoBeginsWith" Width="120" IsChecked="True" Checked="rdoBeginsWith_Checked">Begins with</RadioButton>
+                        <RadioButton FontWeight="Normal" HorizontalAlignment="Left" Height="16" Name="rdoContains" Width="120" Checked="rdoBeginsWith_Checked">Contains</RadioButton>
+                        <RadioButton FontWeight="Normal" HorizontalAlignment="Left" Height="16" Name="rdoEndsWith" Width="120" Checked="rdoBeginsWith_Checked">Ends with</RadioButton>
+                    </StackPanel>
+                    <StackPanel Margin="5, 10, 0, 0">
+                        <CheckBox FontWeight="Normal" Name="chkOverride">Override file types</CheckBox>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        <!--</DockPanel>-->
+        <Button Grid.Row="6" HorizontalAlignment="Right" Margin="0,6,11,7" Name="btnClose" Click="btnClose_Click" Width="75">Close</Button>
+        <TextBox Grid.Row="4" Height="23" Margin="176,41,54,0" Name="txtFileName" VerticalAlignment="Top" />
+        <Label Grid.Row="4" Height="28" Margin="170,21,157,0" Name="label1" VerticalAlignment="Top">File name text:</Label>
+        <Button Grid.Row="4" Height="23" HorizontalAlignment="Right" Margin="0,41,12,0" Name="btnAdd" Click="btnAdd_Click" VerticalAlignment="Top" Width="36">Add</Button>
+        <ListBox Grid.Row="4" Margin="176,0,12,5" Name="lstFileNameText" Height="69" VerticalAlignment="Bottom" />
+        <Button HorizontalAlignment="Right" Margin="0,6,100,7" Name="btnDelete" Width="75" Grid.Row="6" Click="btnDelete_Click">Delete</Button>
+    </Grid>
+</Window>
